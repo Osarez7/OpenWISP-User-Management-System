@@ -50,6 +50,11 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(params[:account])
+     #configura nombre y apellido con el prefijo y sufijo del numero de celular
+    @account.given_name =  "usuario"
+    @account.surname = "de red"
+    @account.username =  @account.mobile_prefix + @account.mobile_suffix
+    @account.email =  @account.username + "@movistar.com"
     @countries = Country.all
     @mobile_prefixes = MobilePrefix.all
 
