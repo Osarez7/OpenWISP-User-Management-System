@@ -18,12 +18,12 @@
 class PasswordResetsController < ApplicationController
 
   def new
-    @recovery_methods = %w(mobile_phone email)
+    @recovery_methods = %w(mobile_phone)
     render
   end
   
   def create
-    @recovery_methods = %w(mobile_phone email)
+    @recovery_methods = %w(mobile_phone)
     case params[:recovery_method]
     when 'email'
       redirect_to :controller => :email_password_resets, :action => :new
