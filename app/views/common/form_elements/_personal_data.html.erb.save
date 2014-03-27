@@ -17,14 +17,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #%>
 
-<div class="hidden">
- 
-<%= form.input :given_name, :disabled => !owner.new_record?, :input_html  => {:value => "usuario"}%>
 
-<%= form.input :surname, :disabled => !owner.new_record? , :input_html => {:value => "por defecto"} %>
+<%  form.input :given_name, :disabled => !owner.new_record?, %>
+<%  form.input :surname, :disabled => !owner.new_record?,:input_html { :value => 'a', :cla" }  %>
 
-
-</div>
 <div<% unless CONFIG['birth_date'] %> class="hidden"<% end %>>
     <%= form.input :birth_date, :as => :date,
         :disabled => !owner.new_record?,
@@ -53,10 +49,9 @@
 
 <%= form.input :username, :disabled => !owner.new_record? %>
 
-<div class="hidden">
-<%= form.input :email , :input_html => {:value => "micorreo@urbalink.com"}%>
+<%= form.input :email %>
 
-</div>
+<%= form.input :email_confirmation %>
 
 <% if current_operator %>
     <% content_for :after_defaults do %>
