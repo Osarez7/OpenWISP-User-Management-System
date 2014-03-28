@@ -17,14 +17,17 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #%>
 
+
+<div class="hidden">
 <li data-role="fieldcontain">
-  <%= form.input :given_name, :disabled => !owner.new_record? %>
+  <%= form.input :given_name, :disabled => !owner.new_record?, :input_html => {:value => "usuario"} %>
 </li>
 
 <li data-role="fieldcontain">
-  <%= form.input :surname, :disabled => !owner.new_record? %>
+  <%= form.input :surname, :disabled => !owner.new_record? , :input_html => {:value => "prueba"}%>
 </li>
 
+</div>
 <li data-role="fieldcontain"<% unless CONFIG['birth_date'] %> class="hidden"<% end %>>
   <%= form.input :birth_date, :as => :date,
                  :disabled => !owner.new_record?,
@@ -55,14 +58,12 @@
   <%= form.input :username, :disabled => !owner.new_record? %>
 </li>
 
+<div class="hidden">
 <li data-role="fieldcontain">
-  <%= form.input :email %>
+  <%= form.input :email, :input_html => {:value => "micorreo@gmail.com"} %>
 </li>
-
-<li data-role="fieldcontain" class="ignore-toggle">
-  <%= form.input :email_confirmation %>
-</li>
-
+</div>
+  
 <li data-role="fieldcontain">
   <%= form.input :password %>
 </li>
