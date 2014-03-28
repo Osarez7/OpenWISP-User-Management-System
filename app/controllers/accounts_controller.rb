@@ -38,6 +38,7 @@ class AccountsController < ApplicationController
 
   def new
     @account = Account.new( :verification_method => Account::VERIFY_BY_MOBILE, :state => 'Italy' )
+    @account.privacy_acceptance = true
     @countries = Country.all
     @mobile_prefixes = MobilePrefix.all
 
