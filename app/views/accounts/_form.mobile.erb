@@ -79,8 +79,6 @@
           <%= f.input_field :eula_acceptance %>
           <%= f.label :eula_acceptance, t(:I_agree) %>
 
-
-
         </fieldset>
       </li>
 
@@ -90,7 +88,9 @@
             <%=t :Tick_to_examine_of %><%= link_to t(:privacy), document_path('privacy.pdf'), :target => '_blank' %>
           </legend>
 
-  <%= f.input :privacy_acceptance, :error => false , :input_html => { :checked => "checked"} %>
+          <%= f.error :privacy_acceptance %>
+          <%= f.input_field :privacy_acceptance %>
+          <%= f.label :privacy_acceptance, t(:I_agree) %>
         </fieldset>
       </li>
 
