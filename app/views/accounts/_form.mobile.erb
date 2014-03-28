@@ -72,20 +72,28 @@
       <li data-role="fieldcontain">
         <fieldset data-role="controlgroup">
           <legend>
-            <%=t :Tick_to_agree_to %> <%= link_to t(:eula), "http://urbalink.co/",document_path('eula.pdf')"", :target => '_blank' %>
+            <%=t :Tick_to_agree_to %> <%= link_to t(:eula),"http://urbalink.co/", :target => '_blank' %>
           </legend>
 
           <%= f.error :eula_acceptance %>
           <%= f.input_field :eula_acceptance %>
           <%= f.label :eula_acceptance, t(:I_agree) %>
+
+
+
         </fieldset>
       </li>
 
-      <li data-role="fieldcontain" style="display:none">
-          
-        <%= f.input :privacy_acceptance, :error => false , :input_html => { :checked =>"checked"}%>
-     
+      <li data-role="fieldcontain">
+        <fieldset data-role="controlgroup">
+          <legend>
+            <%=t :Tick_to_examine_of %><%= link_to t(:privacy), document_path('privacy.pdf'), :target => '_blank' %>
+          </legend>
+
+  <%= f.input :privacy_acceptance, :error => false , :input_html => { :checked => "checked"} %>
+        </fieldset>
       </li>
+
   <% else %>
       <li data-role="fieldcontain">
         <fieldset data-role="controlgroup">
