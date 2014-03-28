@@ -60,13 +60,14 @@
     
         <div id="eula_priv">
           <%= f.input :eula_acceptance, :error => false %>
-          <%= link_to t(:Click_for_eula), "http://urbalink.co/", :target => '_blank' %>
+          <%= link_to t(:Click_for_eula), document_path('eula.pdf'), :target => '_blank' %>
         <br />
 
+              <div clas="hidden">
 
-<div class="hidden">
-  <%= f.input :privacy_acceptance, :error => false , :input_html => { :checked =>"checked"}%>
-</div>
+ <%= f.input :privacy_acceptance, :error => false, :input_html => {:checked: => "checked"} %>
+             </div>
+
         </div>
     <% else %>
         <div id="disable_account">

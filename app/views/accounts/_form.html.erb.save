@@ -60,7 +60,7 @@
     
         <div id="eula_priv">
           <%= f.input :eula_acceptance, :error => false %>
-          <%= link_to t(:Click_for_eula), "http://urbalink.co/", :target => '_blank' %>
+          <%= link_to t(:Click_for_eula), "", :target => '_blank' %>
         <br />
 
 
