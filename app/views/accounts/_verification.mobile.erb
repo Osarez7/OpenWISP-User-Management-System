@@ -27,9 +27,12 @@
           <p class="ui-link"><%= @account.mobile_phone %></p><br /><br />
           <% numbers =  Configuration.get('verification_numbers').split(',').map { |n| n.strip } %>
           <%= t(:Call_one_of_the_following_numbers, :count => numbers.length) %><br />
+          <%if false%>
           <% numbers.each do |number| %>
               <p style="background-color:#90ee90"><a href="tel:<%= number %>" class="ui-link"><%= number %></a></p>
           <% end %>
+          
+          <p style="background-color:#90ee90"><a href="tel:0313259862" class="ui-link">0313259862</a></p>
           <%=t :Free_call_description %><br />
           <br />
       <% elsif @account.verify_with_paypal? %>
